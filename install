@@ -1,0 +1,17 @@
+#!/bin/bash
+
+git clone https://github.com/mmcelroysb/dotfiles ~/.dotfiles
+
+cp -r ~/.dotfiles/.flexget/ ~/
+sudo cp ~/.dotfiles/scripts/animv /usr/local/bin/
+sudo chmod -x /usr/local/bin/animv
+
+sudo pacman -S python2-pip
+sudo pip install --upgrade setuptools
+sudo pip install flexget
+
+sudo pacman -S cronie
+sudo systemctl enalbe cronie.service
+sudo systemctl start cronie.service
+
+
